@@ -9,7 +9,11 @@ const expensesSlice = createSlice({
 const expenseLimitSlice = createSlice({
   name: "Expense Limit",
   initialState: { limit: null },
-  reducers: {},
+  reducers: {
+    setLimit(state, action) {
+      state.limit = action.payload;
+    },
+  },
 });
 
 const store = configureStore({
@@ -18,5 +22,10 @@ const store = configureStore({
     expenseLimit: expenseLimitSlice.reducer,
   },
 });
+
+export const expenseLimitActions = expenseLimitSlice.actions;
+
+export type RootState = ReturnType<typeof store.getState>;
+export type Dispatch = typeof store.dispatch;
 
 export default store;

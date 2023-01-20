@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-      {expenseLimit === null && <ExpenseLimitForm />}
-      <Home />
+      {!expenseLimit && <ExpenseLimitForm />}
+      {expenseLimit && <Home />}
     </>
   );
 }

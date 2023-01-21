@@ -15,9 +15,10 @@ const Home = () => {
         <ExpenseDetailsForm />
       </aside>
       <section>
-        <ExpensesCard />
-        <ExpensesCard />
-        <ExpensesCard />
+        {expenses.length > 0 &&
+          expenses.map((expense) => (
+            <ExpensesCard key={expense.id} data={expense} />
+          ))}
       </section>
     </main>
   );

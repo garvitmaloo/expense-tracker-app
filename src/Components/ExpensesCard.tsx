@@ -1,15 +1,17 @@
 import React from "react";
 import classes from "./Styles/expenses-card.module.css";
 
-const ExpensesCard = () => {
+import { ExpenseDetails } from "../Store/store";
+
+const ExpensesCard: React.FC<{ data: ExpenseDetails }> = (props) => {
   return (
     <div className={classes["expense-card"]}>
       <div className={classes.texts}>
-        <h2>Expense Title </h2>
-        <p className={classes["expense-date"]}>21 January 2023</p>
-        <p className={classes["expense-cat"]}>Books and stationary</p>
+        <h2>{props.data.title} </h2>
+        <p className={classes["expense-date"]}>{props.data.date}</p>
+        <p className={classes["expense-cat"]}>{props.data.category}</p>
       </div>
-      <p className={classes.amount}>500</p>
+      <p className={classes.amount}>{props.data.amount}</p>
     </div>
   );
 };

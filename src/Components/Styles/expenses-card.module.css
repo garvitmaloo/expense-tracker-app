@@ -1,0 +1,35 @@
+.expense-card {
+  padding: 1em;
+  border: 2px solid rgb(201, 201, 201);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  max-width: min-content;
+  max-height: min-content;
+  align-self: flex-start;
+}
+
+.texts h2 {
+  margin-bottom: 0.5em;
+  min-width: 20rem;
+}
+
+.texts p {
+  color: rgb(162, 162, 162);
+  font-size: 14px;
+  margin-bottom: 0.25em;
+}
+
+.amount {
+  background-color: var(--color--3);
+  color: rgb(231, 231, 231);
+  align-self: stretch;
+  padding: 0 1em;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}

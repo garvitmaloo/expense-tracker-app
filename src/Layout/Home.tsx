@@ -1,6 +1,7 @@
 import ExpenseDetailsForm from "../Components/ExpenseDetailsForm";
 import classes from "./home.module.css";
 import { useAppSelector } from "../Hooks/hooks";
+import ExpensesCard from "../Components/ExpensesCard";
 
 const Home = () => {
   const expenses = useAppSelector((state) => state.expenses);
@@ -14,7 +15,10 @@ const Home = () => {
         <ExpenseDetailsForm />
       </aside>
       <section>
-        <h2>Nothing to show</h2>
+        {expenses.length > 0 &&
+          expenses.map((expense) => (
+            <ExpensesCard key={expense.id} data={expense} />
+          ))}
       </section>
     </main>
   );

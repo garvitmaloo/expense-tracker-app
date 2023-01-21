@@ -1,6 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-interface ExpenseDetails {
+export interface ExpenseDetails {
   id: number;
   date: string;
   title: string;

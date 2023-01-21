@@ -16,3 +16,15 @@
   text-align: center;
   margin: 1em auto;
 }
+
+.main-container section {
+  padding: 2em 1em;
+  flex: 1;
+  height: min-content;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}

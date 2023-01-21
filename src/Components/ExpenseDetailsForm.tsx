@@ -22,6 +22,7 @@ enum Month {
 const ExpenseDetailsForm = () => {
   const amountInputRef = useRef<HTMLInputElement>(null);
   const titleInputRef = useRef<HTMLInputElement>(null);
+  const dateInputRef = useRef<HTMLInputElement>(null);
   const selectInputRef = useRef<HTMLSelectElement>(null);
 
   const dispatch = useAppDispatch();
@@ -32,8 +33,9 @@ const ExpenseDetailsForm = () => {
     const enteredAmount = amountInputRef.current!.value;
     const enteredTitle = titleInputRef.current!.value;
     const selectedCategory = selectInputRef.current!.value;
+    const enteredDate = dateInputRef.current!.value;
 
-    const date = new Date();
+    const date = new Date(enteredDate);
     const dateString = `${date.getDate()} ${
       Month[date.getMonth()]
     } ${date.getFullYear()}`;
@@ -47,6 +49,10 @@ const ExpenseDetailsForm = () => {
         category: selectedCategory,
       })
     );
+
+    amountInputRef.current!.value = "";
+    titleInputRef.current!.value = "";
+    dateInputRef.current!.value = "";
   };
 
   return (
@@ -63,6 +69,12 @@ const ExpenseDetailsForm = () => {
         placeholder="Enter expense title"
         ref={titleInputRef}
       />
+      <input
+        type="date"
+        name="expense-date"
+        id="expense-date"
+        ref={dateInputRef}
+      />
       <select
         required
         name="exp-category"
@@ -71,11 +83,11 @@ const ExpenseDetailsForm = () => {
         defaultValue="null"
       >
         <option value="">Select a category</option>
-        <option value="books-and-stationary">Books and Stationary</option>
-        <option value="food-and-travel">Food and travel</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="grooming-and-shopping">Shopping and Grooming</option>
-        <option value="miscellaneous">Miscellaneous</option>
+        <option value="Books and Stationary">Books and Stationary</option>
+        <option value="Food and Travel">Food and travel</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Grooming and Shopping">Shopping and Grooming</option>
+        <option value="Miscellaneous">Miscellaneous</option>
       </select>
 
       <button type="submit">Enter Expense</button>

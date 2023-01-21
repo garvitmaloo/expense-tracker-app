@@ -22,6 +22,7 @@ enum Month {
 const ExpenseDetailsForm = () => {
   const amountInputRef = useRef<HTMLInputElement>(null);
   const titleInputRef = useRef<HTMLInputElement>(null);
+  const dateInputRef = useRef<HTMLInputElement>(null);
   const selectInputRef = useRef<HTMLSelectElement>(null);
 
   const dispatch = useAppDispatch();
@@ -32,8 +33,9 @@ const ExpenseDetailsForm = () => {
     const enteredAmount = amountInputRef.current!.value;
     const enteredTitle = titleInputRef.current!.value;
     const selectedCategory = selectInputRef.current!.value;
+    const enteredDate = dateInputRef.current!.value;
 
-    const date = new Date();
+    const date = new Date(enteredDate);
     const dateString = `${date.getDate()} ${
       Month[date.getMonth()]
     } ${date.getFullYear()}`;
@@ -62,6 +64,12 @@ const ExpenseDetailsForm = () => {
         required
         placeholder="Enter expense title"
         ref={titleInputRef}
+      />
+      <input
+        type="date"
+        name="expense-date"
+        id="expense-date"
+        ref={dateInputRef}
       />
       <select
         required

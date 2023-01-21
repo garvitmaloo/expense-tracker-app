@@ -16,6 +16,10 @@
   color: rgb(244, 244, 244);
 }
 
+.new-expense-form input[type="date"] {
+  font-family: "Roboto", sans-serif;
+}
+
 .new-expense-form input::placeholder {
   color: rgb(200, 200, 200);
   font-size: 14px;

@@ -40,9 +40,19 @@ const ExpenseDetailsForm = () => {
       Month[date.getMonth()]
     } ${date.getFullYear()}`;
 
+    const currentDate = new Date();
+
+    if (
+      date.getMonth() !== currentDate.getMonth() &&
+      date.getFullYear() !== currentDate.getFullYear()
+    ) {
+      alert("You are allowed to add expenses of the current month only.");
+      return;
+    }
+
     dispatch(
       expenseActions.addExpense({
-        id: date.getTime(),
+        id: `${enteredTitle}--${date.getTime()}`,
         date: dateString,
         amount: enteredAmount,
         title: enteredTitle,

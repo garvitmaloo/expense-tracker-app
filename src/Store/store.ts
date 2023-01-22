@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 export interface ExpenseDetails {
-  id: number;
+  id: string;
   date: string;
   title: string;
   amount: number;
@@ -12,10 +12,11 @@ const expenses: ExpenseDetails[] = [];
 
 const expensesSlice = createSlice({
   name: "Expenses Slice",
-  initialState: expenses,
+  initialState: { expenses, totalExpenseAmount: 0 },
   reducers: {
     addExpense(state, action) {
-      state.unshift(action.payload);
+      state.expenses.unshift(action.payload);
+      state.totalExpenseAmount += +action.payload.amount;
     },
   },
 });

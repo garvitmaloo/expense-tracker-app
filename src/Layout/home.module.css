@@ -17,6 +17,10 @@
   margin: 1em auto;
 }
 
+.main-container aside h3 {
+  font-weight: 400;
+}
+
 .main-container section {
   padding: 2em 1em;
   flex: 1;

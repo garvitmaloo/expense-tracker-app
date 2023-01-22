@@ -42,7 +42,7 @@ const ExpenseDetailsForm = () => {
 
     dispatch(
       expenseActions.addExpense({
-        id: date.getTime(),
+        id: `${enteredTitle}--${date.getTime()}`,
         date: dateString,
         amount: enteredAmount,
         title: enteredTitle,

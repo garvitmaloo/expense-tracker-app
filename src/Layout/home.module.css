@@ -22,6 +22,11 @@
   font-weight: 400;
 }
 
+.main-container aside p {
+  margin-top: 1em;
+  color: rgb(255, 241, 241);
+}
+
 .main-container section {
   padding: 2em 1em;
   flex: 1;

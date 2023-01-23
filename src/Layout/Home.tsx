@@ -45,6 +45,10 @@ const Home = () => {
         <h3>Expense Limit: {expenseLimit.limit}</h3>
         <h3>Expenses this month: {expensesState.totalExpenseAmount}</h3>
         <h3>Remaining amount: {remainingAmount}</h3>
+
+        {remainingAmount && remainingAmount < 0 && (
+          <p>You have exceeded the monthly expense limit.</p>
+        )}
       </aside>
 
       <section>

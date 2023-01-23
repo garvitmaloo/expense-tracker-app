@@ -10,6 +10,7 @@
   padding: 0 1em;
   background-color: var(--color--4);
   color: rgb(244, 244, 244);
+  animation: fadeIn 400ms ease-in backwards;
 }
 
 .main-container aside h2 {
@@ -31,4 +32,13 @@
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

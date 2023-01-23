@@ -9,6 +9,8 @@
   max-width: min-content;
   max-height: min-content;
   align-self: flex-start;
+
+  animation: unfold 400ms ease-in-out backwards;
 }
 
 .texts h2 {
@@ -32,4 +34,13 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
+}
+
+@keyframes unfold {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
